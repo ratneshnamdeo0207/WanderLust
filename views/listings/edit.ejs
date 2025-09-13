@@ -1,0 +1,96 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+    <div class="row mt-3 mb-5">
+        <div class="col-8 offset-2">
+    <h2>Edit Details</h2>
+    <form action="/listings/<%= listing._id%>?_method=PUT" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+      
+        
+        <div class="mb-3">
+            <label for="listing[title]" class="form-label">Title</label>
+            <input type="text" name="listing[title]"  class="form-control" value="<%= listing.title %>" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please enter a title.
+            </div>
+          </div>
+
+       
+        <div class="mb-3">
+            <label for="listing[description]" class="form-label">Description</label>
+            <textarea name="listing[description]" class="form-control" required><%= listing.description %> 
+            
+            </textarea>
+            <div class="valid-feedback">
+              You Describe it well!!
+            </div>
+            <div class="invalid-feedback">
+              Please describe the place
+            </div>
+          </div>
+        
+          <div class="mb-3">
+              Previous Uploaded Image <br>
+              <img src="<%= originalUrl %>" alt="<%= listing.image.filename %>">
+          </div>
+        
+        <div class="mb-3">
+            <label for="listing[image]" class="form-label">Upload new Image</label>
+            <input type="file" name="listing[image]" 
+             class="form-control"
+             >
+             
+          </div>
+
+    
+        
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="listing[price]" class="form-label">Price</label>
+                <input type="number" name="listing[price]" class="form-control" value="<%= listing.price %>"
+                required>
+                <div class="valid-feedback">
+                  Affordable
+                </div>
+                <div class="invalid-feedback">
+                  Is it free?
+                </div>
+              </div>
+    
+           
+            
+            <div class="mb-3 col-md-8 ">
+                <label for="listing[country]" class="form-label">Country</label>
+                <input type="text" name="listing[country]" value="<%= listing.country %>" class="form-control"
+                required>
+                <div class="valid-feedback">
+                  Beautiful Country
+                </div>
+                <div class="invalid-feedback">
+                  Is it in moon?
+                </div>
+              </div>
+              
+        </div>
+
+        
+        <div class="mb-3">
+            <label for="listing[location]" class="form-label">Location</label>
+            <input type="text" name="listing[location]"  value="<%= listing.location %>" class="form-control"
+            required>
+            <div class="valid-feedback">
+              Thats a Beautiful place to live
+            </div>
+            <div class="invalid-feedback">
+              How can we locate if you not give us the location?
+            </div>
+          </div>
+
+        <button class="btn btn-dark add-btn">submit</button>
+    </form>
+</div>
+</div>
+
+</body>

@@ -1,0 +1,96 @@
+<% layout('/layouts/boilerplate') -%>
+
+    <style>
+        #filters {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .filter{
+            margin-left: 2rem;
+            margin-top: 2rem;
+            opacity: 0.7;
+        }
+        .filter:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+
+    </style>
+
+    <body>
+        
+        <div id="filters">
+            <div class="filter">
+              <div>  <i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+
+            <div class="filter">
+                <div>  <i class="fa-solid fa-bed"></i></i></div>
+                  <p>Room</p>
+              </div>
+
+              <div class="filter">
+                <div>  <i class="fa-solid fa-mountain-city"></i></div>
+                  <p>Iconic Cities</p>
+              </div>
+
+              <div class="filter">
+                <div>  <i class="fa-solid fa-chess-rook"></i></div>
+                  <p>Castles</p>
+              </div>
+
+              <div class="filter">
+                <div>  <i class="fa-solid fa-person-swimming"></i></div>
+                  <p>Pools</p>
+              </div>
+
+              <div class="filter">
+                <div>  <i class="fa-solid fa-campground"></i></div>
+                  <p>Camping</p>
+              </div>
+
+              <div class="filter">
+                <div> <i class="fa-regular fa-snowflake"></i></div>
+                  <p>Snow sides</p>
+              </div>
+
+              <div class="filter">
+                <div>  <i class="fa-solid fa-mountain-sun"></i></div>
+                  <p>Mountain</p>
+              </div>
+
+              <div class="filter">
+                <div>  <i class="fa-solid fa-cow"></i></div>
+                  <p>Farm</p>
+              </div>
+
+              <div class="filter">
+                <div>  <i class="fa-solid fa-fire"></i></div>
+                  <p>Trending</p>
+              </div>
+
+        </div>
+        
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-4" >
+        <% for(let list of data){ %>
+            <a class="listing-links" href="/listings/<%= list.id %>">
+            <div class="card listing-card" >
+                <img src="<%= list.image.url %> " style="height: 20rem" class="card-img-top" alt=<%= list.image.filename %> >
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                    <p class="card-text">
+                       <b> <%= list.title %></b>
+                        <br>
+                        &#x20b9; <%= list.price.toLocaleString("en-in") %>/night
+                    </p>
+                        
+                </div>
+            </div>
+        </a>
+                <% } %>
+
+            </div>         
+
+           
+    </body>
