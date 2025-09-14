@@ -84,6 +84,9 @@ async function main() {
   await mongoose.connect(process.env.ATLASDB_URL);  
 }
 
+app.get("/", (req,res)=>{
+    
+})
 
 // app.get("/demouser", async(req, res, next)=>{
 //     let fakeUser = new User({
