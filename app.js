@@ -85,7 +85,7 @@ async function main() {
 }
 
 app.get("/", (req,res)=>{
-    
+    res.render("listings/welcome.ejs")
 })
 
 // app.get("/demouser", async(req, res, next)=>{
