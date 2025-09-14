@@ -66,13 +66,20 @@ app.use(express.static(path.join(__dirname, "public")))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(methodOverride('_method'))
+
+
+app.get("/", (req, res)=>{
+    res.render("listings/welcome.ejs")
+})
+ 
 app.use("/listings", listingRouter)
 app.use("/listings/:id/review/", reviewRouter)
 app.use("/", userRouter);
 
-app.listen(4000, ()=>{
-    console.log("We r on at 4000")
-})
+const port = process.env.PORT || 4000; // 4000 is fallback for local dev
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Server running on port ${port}`);
+});
 
 main().then(
     (res)=>{
@@ -84,9 +91,6 @@ async function main() {
   await mongoose.connect(process.env.ATLASDB_URL);  
 }
 
-app.get("/", (req,res)=>{
-    res.render("listings/welcome.ejs")
-})
 
 // app.get("/demouser", async(req, res, next)=>{
 //     let fakeUser = new User({
