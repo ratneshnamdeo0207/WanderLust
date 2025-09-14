@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom sticky-top ">
     <div class="container-fluid">
       
-      <a class="navbar-brand" href="/"><i class="fa-solid fa-compass"></i> WanderLust</a>
+      <a class="navbar-brand" href="/"><i class="fa-solid fa-compass"></i> &nbsp; WanderLust</a>
       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" >
         <span class="navbar-toggler-icon"></span>
@@ -17,15 +17,14 @@
         <div class="navbar-nav ms-auto">
           
           
-          <% if (!currUser) { %>
-           <b> <a class="nav-link " href="/signup">Signup</a> </b>
-            <b><a class="nav-link" href="/login">Login</a></b>
-         
-          <% } %>
-
+          
           <% if (currUser) { %>
-            <a class="nav-link" href="/logout">Logout</a>
-          <% } %>
+            <a class="nav-link " href="/logout">Logout</a>
+          
+         <% } else { %>
+          <b>  <a class="nav-link border border-danger rounded px-3 py-1" href="/signup">Signup</a></b>
+          <b>  <a class="nav-link border border-success ms-3 rounded px-3 py-1 " href="/login">Login</a></b>
+         <% } %>
         </div>
       </div>
       

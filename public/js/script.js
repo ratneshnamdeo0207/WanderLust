@@ -16,3 +16,11 @@
       }, false)
     })
   })()
+
+  let btns = document.querySelectorAll(".filter");
+  for(btn of btns)
+{
+  btn.addEventListener("click", function (){
+    this.children[1].innerText
+  })
+}

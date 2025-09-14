@@ -1,6 +1,15 @@
 const Listing = require("../models/listing.js")
 
 module.exports.index = async (req, res)=>{
+    let {c} = req.query;
+    if(c)
+    {
+        let allListing =  await Listing.find({category: c})
+        console.log(allListing)
+        return res.render("listings/index.ejs", {data : allListing})
+        // return res.send("ok")
+         
+    }
     let allListing =  await Listing.find()
     console.log(allListing)
     res.render("listings/index.ejs", {data : allListing})
@@ -14,16 +23,20 @@ module.exports.renderNewForm = (req, res)=>{
 
 module.exports.showListing = async (req, res)=>{
     let { id } = req.params;
+    
+  
     let listing = await Listing.findById(id).populate({path: "reviews", populate: { path: "author"}}).populate("owner");
     console.log("inside")
     console.log(listing)
+    let url = listing.location + ", "+ listing.country;
+    console.log(url)
     if(!listing  )
     {
         req.flash("error", "Listing does not exist")
         return res.redirect("/listings");
     }
-    console.log(listing);
-    res.render("listings/show.ejs", {listing})
+   
+    res.render("listings/show.ejs", {listing , url })
 };
 
 module.exports.newListing = async (req, res)=>{

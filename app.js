@@ -50,7 +50,7 @@ app.use(flash())
 app.use((req, res, next)=>{
     res.locals.success = req.flash("success")
     res.locals.error = req.flash("error")
-    res.locals.currUser = req.user;
+    res.locals.currUser = req.user || null; 
     next();
 })
 
@@ -88,6 +88,7 @@ main().then(
 ).catch(err => console.log(err));
 
 async function main() {
+  // await mongoose.connect('mongodb://127.0.0.1:27017/wanderlust');
   await mongoose.connect(process.env.ATLASDB_URL);  
 }
 

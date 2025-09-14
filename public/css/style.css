@@ -107,3 +107,12 @@
 .btns{
    display: flex;
 }
+
+#map {
+   height: 300px;  /* or 100vh for fullscreen */
+   /* width: 80%;    optional, but good */
+ }
+ #img{
+   height:  100px;
+   width: 200px;
+ }

@@ -12,7 +12,7 @@ async function main() {
 }
 let initDb = async ()=>{
     await Listing.deleteMany({})
-    initData.data = initData.data.map((el) =>({...el, owner: '68b6dc6956deeb96737b5f04'}))
+    initData.data = initData.data.map((el) =>({...el, owner: '68b6dc6956deeb96737b5f04', category: "no category"}))
     await Listing.insertMany(initData.data)
     console.log("Data Saved")
 }

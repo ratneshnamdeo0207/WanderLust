@@ -31,9 +31,9 @@
             </div>
           </div>
         
-          <div class="mb-3">
+          <div class="mb-3 ">
               Previous Uploaded Image <br>
-              <img src="<%= originalUrl %>" alt="<%= listing.image.filename %>">
+              <img id="img" src="<%= originalUrl %>" alt="<%= listing.image.filename %>">
           </div>
         
         <div class="mb-3">
@@ -44,7 +44,18 @@
              
           </div>
 
-    
+          <select class="form-select form-select-sm mb-3" name="listing[category]" aria-label=".form-select-sm example">
+            <option value="no category" <%= listing.category === "no category" ? "selected" : "" %> >No Category</option>
+            <option value="trending" <%= listing.category === "trending" ? "selected" : "" %>>Trending</option>
+            <option value="room" <%= listing.category === "room" ? "selected" : "" %>>Room</option>
+            <option value="iconic cities" <%= listing.category === "iconic cities" ? "selected" : "" %>>Iconic Cities</option>
+            <option value="castles" <%= listing.category === "castles" ? "selected" : "" %>>Castles</option>
+            <option value="pools" <%= listing.category === "pools" ? "selected" : "" %>>Pools</option>
+            <option value="camping" <%= listing.category === "camping" ? "selected" : "" %>>Camping</option>
+            <option value="snow sides" <%= listing.category === "snow sides" ? "selected" : "" %>>Snow Sides</option>
+            <option value="mountain" <%= listing.category === "mountain" ? "selected" : "" %>>mountain</option>
+  
+          </select>
         
         <div class="row">
             <div class="mb-3 col-md-4">
@@ -74,7 +85,7 @@
               </div>
               
         </div>
-
+       
         
         <div class="mb-3">
             <label for="listing[location]" class="form-label">Location</label>
@@ -94,3 +105,4 @@
 </div>
 
 </body>
+<% layout('/layouts/boilerplate') -%>
