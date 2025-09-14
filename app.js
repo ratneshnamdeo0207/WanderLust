@@ -81,16 +81,17 @@ app.listen(port, "0.0.0.0", () => {
   console.log(`Server running on port ${port}`);
 });
 
+async function main() {
+  // await mongoose.connect('mongodb://127.0.0.1:27017/wanderlust');
+  await mongoose.connect(dburl);  
+}
 main().then(
     (res)=>{
         console.log("Connectoin Established Sucessfully")
     }
 ).catch(err => console.log(err));
 
-async function main() {
-  // await mongoose.connect('mongodb://127.0.0.1:27017/wanderlust');
-  await mongoose.connect(process.env.ATLASDB_URL);  
-}
+
 
 
 // app.get("/demouser", async(req, res, next)=>{
