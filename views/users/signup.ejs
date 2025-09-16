@@ -7,7 +7,7 @@
 
         <h2>Signup on Wanderlust</h2>
 
-          <form action="/signup" method="post" novalidate class="needs-validation">   
+          <form id="f" action="/signup" method="post" novalidate class="needs-validation">   
 
             <div class="mt-3">
               <label for="username" class="form-label">Username</label>
@@ -31,5 +31,25 @@
           </form>
       </div>
 </div>
+<script>
+
+let f = document.querySelector("form");
+
+f.addEventListener("submit", (req, res) => {
+  e.preventDefault(); // prevent auto-submit for testing
+  console.log("submitted");
+
+  let password = f[2].value;
+  let result = zxcvbn(password); // <-- no require needed
+
+  if (result.score >= 2) { // 0=weak, 4=strong
+    console.log("True (Medium or Strong)");
+  } else {
+    alert("Password too weak! Please use uppercase, lowercase, numbers, and symbols.");
+      
+    
+  }
+});
+</script>
 <!-- <script src="/js/script.js"></script> -->
 </body>

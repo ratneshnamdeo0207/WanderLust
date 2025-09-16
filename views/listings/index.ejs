@@ -1,25 +1,95 @@
 <% layout('/layouts/boilerplate') -%>
 
-    <style>
-        #filters {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .filter{
-            margin-left: 2rem;
-            margin-top: 2rem;
-            opacity: 0.7;
-        }
-        .filter:hover{
-            opacity: 1;
-            cursor: pointer;
-        }
-
-    </style>
+  
 
     <body>
+      
+      <div class="scrollmenu">
+        <a href="/listings?c=no category">
+          <div class="d-flex flex-column align-items-center">
+            <i class="fa-solid fa-globe fs-4"></i>
+          <p class="mb-0">All</p>
+        </div>
+      </a>
+
+        <a href="/listings?c=trending">
+          <div class="d-flex flex-column align-items-center">
+            <i class="fa-solid fa-fire fs-4"></i>
+            <p class="mb-0">Trending</p>
+          </div> 
+        </a>
+        <a href="/listings?c=room">
+          <div class="d-flex flex-column align-items-center">
+            <i class="fa-solid fa-bed fs-4"></i>
+            <p class="mb-0">Room</p>
+          </div>
+        </a>
+        <a href="/listings?c=iconic cities">
+          <div class="d-flex flex-column align-items-center">
+            <i class="fa-solid fa-mountain-city fs-4"></i>
+            <p class="mb-0">Iconic Cities</p>
+          </div>
+        </a>
+        <a href="/listings?c=castles">
+          <div class="d-flex flex-column align-items-center">
+            <i class="fa-solid fa-chess-rook fs-4"></i>
+            <p class="mb-0">Castles</p>
+          </div>
+        </a>
+        <a href="/listings?c=pools">
+          <div class="d-flex flex-column align-items-center">
+            <i class="fa-solid fa-person-swimming fs-4"></i>
+            <p class="mb-0">Pools</p>
+          </div>
+        </a>
+        <a href="/listings?c=camping">
+          <div class="d-flex flex-column align-items-center">
+            <i class="fa-solid fa-campground fs-4"></i>
+            <p class="mb-0">Camping</p>
+          </div>
+        </a>
+        <a href="/listings?c=snow sides">
+          <div class="d-flex flex-column align-items-center">
+            <i class="fa-regular fa-snowflake fs-4"></i>
+            <p class="mb-0">Snow Sides</p>
+          </div>
+        </a>
+        <a href="/listings?c=mountain">
+          <div class="d-flex flex-column align-items-center">
+            <i class="fa-solid fa-mountain-sun fs-4"></i>
+            <p class="mb-0">Mountain</p>
+          </div>
+        </a>
+        <a href="/listings?c=farm">
+          <div class="d-flex flex-column align-items-center">
+            <i class="fa-solid fa-cow fs-4"></i>
+            <p class="mb-0">Farm</p>
+          </div>
+        </a>
+        <a href="/listings?c=trending">
+          <div class="d-flex flex-column align-items-center">
+            <i class="fa-solid fa-fire fs-4"></i>
+            <p class="mb-0">Trending</p>
+          </div>
+        </a>
         
-      <div id="filters">
+
+      </div>
+      <!-- <div class="icon-bar offset-1 pt-4">
+        <a class="active" href="/listings"><i class="fa fa-home"></i></a>
+
+        <a href="/listings?c=trending"><i class="fa-solid fa-fire fs-4"></i></a>
+        <a href="/listings?c=room"><i class="fa-solid fa-bed fs-4"></i></a>
+        <a href="/listings?c=iconic cities"><i class="fa-solid fa-mountain-city fs-4"></i></a>
+        <a href="/listings?c=castles"><i class="fa-solid fa-chess-rook fs-4"></i></a>
+        <a href="/listings?c=pools"><i class="fa-solid fa-person-swimming fs-4"></i></a>
+        <a href="/listings?c=camping"><i class="fa-solid fa-campground fs-4"></i></a>
+        <a href="/listings?c=snow sides"> <i class="fa-regular fa-snowflake fs-4"></i></a>
+        <a href="/listings?c=mountain"> <i class="fa-solid fa-mountain-sun fs-4"></i></a>
+        <a href="/listings?c=farm"> <i class="fa-solid fa-cow fs-4"></i></a>
+      </div>
+         -->
+      <!-- <div id="filters" >
 
         <div class="filter">
           <a class="text-decoration-none text-dark" href="/listings?c=no category">
@@ -121,7 +191,7 @@
         </div>
       
       </div>
-      
+       -->
    
       <% if(data.length === 0) {%>
 

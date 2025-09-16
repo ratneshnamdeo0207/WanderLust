@@ -116,3 +116,59 @@
    height:  100px;
    width: 200px;
  }
+
+
+ #filters {
+     display: flex;
+     flex-wrap: wrap;
+ }
+ .filter{
+     margin-left: 2rem;
+     margin-top: 2rem;
+     opacity: 0.7;
+ }
+ .filter:hover{
+     opacity: 1;
+     cursor: pointer;
+ }
+ .icon-bar {
+ width: 100%; 
+ background-color: #ffffff; /* Dark-grey background */
+ overflow: auto; /* Overflow due to float */
+ }
+
+.icon-bar a {
+ float: left; /* Float links side by side */
+ text-align: center; /* Center-align text */
+ width: 7%; /* Equal width (5 icons with 20% width each = 100%) */
+ padding: 12px 0; /* Some top and bottom padding */
+ transition: all 0.3s ease; /* Add transition for hover effects */
+ color: rgb(0, 0, 0); /* White text color */
+ font-size: 36px; /* Increased font size */
+ }
+
+.icon-bar a:hover {
+ background-color: #50aaff; /* Add a hover color */
+ }
+
+.active {
+ background-color: #04AA6D; /* Add an active/current color */
+ }
+
+ div.scrollmenu {
+   background-color: #ffffff;
+   overflow: auto;
+   white-space: nowrap;
+ }
+ 
+ div.scrollmenu a {
+   display: inline-block;
+   color: rgb(20, 18, 18);
+   text-align: center;
+   padding: 14px;
+   text-decoration: none;
+ }
+ 
+ div.scrollmenu a:hover {
+   background-color: #cac1c1;
+ }

@@ -1,3 +1,4 @@
+// const { passwordStrength } = require('check-password-strength')
 (() => {
     'use strict'
   
@@ -24,3 +25,6 @@
     this.children[1].innerText
   })
 }
+
+
+
