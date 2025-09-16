@@ -1,108 +1,95 @@
 <% layout('/layouts/boilerplate') -%>
 <body>
-    <div class="row mt-3 mb-5">
-        <div class="col-8 offset-2">
-    <h2>Edit Details</h2>
-    <form action="/listings/<%= listing._id%>?_method=PUT" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
-      
+  <div class="container mt-3 mb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10 col-sm-12">
         
-        <div class="mb-3">
+        <h2 class="mb-4">Edit Details</h2>
+
+        <form action="/listings/<%= listing._id%>?_method=PUT" method="post" 
+              novalidate class="needs-validation" enctype="multipart/form-data">
+
+          <!-- Title -->
+          <div class="mb-3">
             <label for="listing[title]" class="form-label">Title</label>
-            <input type="text" name="listing[title]"  class="form-control" value="<%= listing.title %>" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-            <div class="invalid-feedback">
-              Please enter a title.
-            </div>
+            <input type="text" name="listing[title]" class="form-control" 
+                   value="<%= listing.title %>" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please enter a title.</div>
           </div>
 
-       
-        <div class="mb-3">
+          <!-- Description -->
+          <div class="mb-3">
             <label for="listing[description]" class="form-label">Description</label>
-            <textarea name="listing[description]" class="form-control" required><%= listing.description %> 
-            
-            </textarea>
-            <div class="valid-feedback">
-              You Describe it well!!
-            </div>
-            <div class="invalid-feedback">
-              Please describe the place
-            </div>
+            <textarea name="listing[description]" class="form-control" rows="3" required><%= listing.description %></textarea>
+            <div class="valid-feedback">You described it well!!</div>
+            <div class="invalid-feedback">Please describe the place</div>
           </div>
-        
-          <div class="mb-3 ">
-              Previous Uploaded Image <br>
-              <img id="img" src="<%= originalUrl %>" alt="<%= listing.image.filename %>">
+
+          <!-- Previous Image -->
+          <div class="mb-3">
+            <label class="form-label d-block">Previous Uploaded Image</label>
+            <img id="img" src="<%= originalUrl %>" 
+                 alt="<%= listing.image.filename %>" 
+                 class="img-fluid rounded shadow-sm" style="max-height:200px;">
           </div>
-        
-        <div class="mb-3">
+
+          <!-- Upload New Image -->
+          <div class="mb-3">
             <label for="listing[image]" class="form-label">Upload new Image</label>
-            <input type="file" name="listing[image]" 
-             class="form-control"
-             >
-             
+            <input type="file" name="listing[image]" class="form-control">
           </div>
 
-          <select class="form-select form-select-sm mb-3" name="listing[category]" aria-label=".form-select-sm example">
-            <option value="no category" <%= listing.category === "no category" ? "selected" : "" %> >No Category</option>
-            <option value="trending" <%= listing.category === "trending" ? "selected" : "" %>>Trending</option>
-            <option value="room" <%= listing.category === "room" ? "selected" : "" %>>Room</option>
-            <option value="iconic cities" <%= listing.category === "iconic cities" ? "selected" : "" %>>Iconic Cities</option>
-            <option value="castles" <%= listing.category === "castles" ? "selected" : "" %>>Castles</option>
-            <option value="pools" <%= listing.category === "pools" ? "selected" : "" %>>Pools</option>
-            <option value="camping" <%= listing.category === "camping" ? "selected" : "" %>>Camping</option>
-            <option value="snow sides" <%= listing.category === "snow sides" ? "selected" : "" %>>Snow Sides</option>
-            <option value="mountain" <%= listing.category === "mountain" ? "selected" : "" %>>mountain</option>
-  
-          </select>
-        
-        <div class="row">
+          <!-- Category -->
+          <div class="mb-3">
+            <label for="listing[category]" class="form-label">Category</label>
+            <select class="form-select" name="listing[category]">
+              <option value="no category" <%= listing.category === "no category" ? "selected" : "" %>>No Category</option>
+              <option value="trending" <%= listing.category === "trending" ? "selected" : "" %>>Trending</option>
+              <option value="room" <%= listing.category === "room" ? "selected" : "" %>>Room</option>
+              <option value="iconic cities" <%= listing.category === "iconic cities" ? "selected" : "" %>>Iconic Cities</option>
+              <option value="castles" <%= listing.category === "castles" ? "selected" : "" %>>Castles</option>
+              <option value="pools" <%= listing.category === "pools" ? "selected" : "" %>>Pools</option>
+              <option value="camping" <%= listing.category === "camping" ? "selected" : "" %>>Camping</option>
+              <option value="snow sides" <%= listing.category === "snow sides" ? "selected" : "" %>>Snow Sides</option>
+              <option value="mountain" <%= listing.category === "mountain" ? "selected" : "" %>>Mountain</option>
+            </select>
+          </div>
+
+          <!-- Price + Country -->
+          <div class="row">
             <div class="mb-3 col-md-4">
-                <label for="listing[price]" class="form-label">Price</label>
-                <input type="number" name="listing[price]" class="form-control" value="<%= listing.price %>"
-                required>
-                <div class="valid-feedback">
-                  Affordable
-                </div>
-                <div class="invalid-feedback">
-                  Is it free?
-                </div>
-              </div>
-    
-           
-            
-            <div class="mb-3 col-md-8 ">
-                <label for="listing[country]" class="form-label">Country</label>
-                <input type="text" name="listing[country]" value="<%= listing.country %>" class="form-control"
-                required>
-                <div class="valid-feedback">
-                  Beautiful Country
-                </div>
-                <div class="invalid-feedback">
-                  Is it in moon?
-                </div>
-              </div>
-              
-        </div>
-       
-        
-        <div class="mb-3">
-            <label for="listing[location]" class="form-label">Location</label>
-            <input type="text" name="listing[location]"  value="<%= listing.location %>" class="form-control"
-            required>
-            <div class="valid-feedback">
-              Thats a Beautiful place to live
+              <label for="listing[price]" class="form-label">Price</label>
+              <input type="number" name="listing[price]" class="form-control" 
+                     value="<%= listing.price %>" required>
+              <div class="valid-feedback">Affordable</div>
+              <div class="invalid-feedback">Is it free?</div>
             </div>
-            <div class="invalid-feedback">
-              How can we locate if you not give us the location?
+
+            <div class="mb-3 col-md-8">
+              <label for="listing[country]" class="form-label">Country</label>
+              <input type="text" name="listing[country]" class="form-control" 
+                     value="<%= listing.country %>" required>
+              <div class="valid-feedback">Beautiful Country</div>
+              <div class="invalid-feedback">Is it on the moon?</div>
             </div>
           </div>
 
-        <button class="btn btn-dark add-btn">submit</button>
-    </form>
-</div>
-</div>
+          <!-- Location -->
+          <div class="mb-3">
+            <label for="listing[location]" class="form-label">Location</label>
+            <input type="text" name="listing[location]" class="form-control" 
+                   value="<%= listing.location %>" required>
+            <div class="valid-feedback">That's a beautiful place to live</div>
+            <div class="invalid-feedback">How can we locate if you don’t give us the location?</div>
+          </div>
 
+          <!-- Submit -->
+          <button class="btn btn-dark ">Submit</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
 </body>
 <% layout('/layouts/boilerplate') -%>

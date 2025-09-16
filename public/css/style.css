@@ -1,46 +1,49 @@
 /* body{
     background-color: pink;
 } */
- /* navbar */
+/* navbar */
 
- @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
- body{
+body {
    font-family: "Plus Jakarta Sans", sans-serif !important;
    display: flex;
    flex-direction: column;
    min-height: 100vh;
- }
- .navbar{
-    height: 5em;
- }
+}
 
- .container{
+.navbar {
+   height: 5em;
+}
+
+.container {
    flex: 1;
- }
+}
 
- /* icon */
- .fa-compass{
-    color: #fe424d;
-    font-size: 2rem;
- }
+/* icon */
+.fa-compass {
+   color: #fe424d;
+   font-size: 2rem;
+}
 
- /* navlin */
- .nav-link{
-    color: #222222 !important;
+/* navlin */
+.nav-link {
+   color: #222222 !important;
 
- }
+}
 
- /* footer */
- .f-info-links a{
+/* footer */
+.f-info-links a {
    text-decoration: none;
 
- }
- .f-info-links a:hover{
+}
+
+.f-info-links a:hover {
    text-decoration: underline;
-   
- }
-.f-info{
+
+}
+
+.f-info {
    text-align: center;
    height: 8em;
    background-color: #ebebeb;
@@ -50,125 +53,149 @@
    align-items: space-evenly;
 }
 
-.f-info-socials i{
+.f-info-socials i {
    font-size: 1.2rem;
    margin-right: 1rem;
 }
-.f-info-links, .f-info-socials, .f-info-brand{
+
+.f-info-links,
+.f-info-socials,
+.f-info-brand {
    width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 /* cards */
-.listing-card{
+.listing-card {
    border: none !important;
    margin-bottom: 2rem;
 }
-.card-img-top{
+
+.card-img-top {
    border-radius: 2rem !important;
    width: 100% !important;
 }
-.card-body{
+
+.card-body {
    padding: 0 !important;
 }
-.card-text p{
+
+.card-text p {
    font-weight: 400 !important;
 
 }
 
-.listing-links{
+.listing-links {
    text-decoration: none !important;
 }
 
-.card-img-overlay{
+.card-img-overlay {
    opacity: 0;
 }
 
-.card-img-overlay:hover{
+.card-img-overlay:hover {
    opacity: 0.2;
    background-color: white;
 }
 
-.add-btn{
+.add-btn {
    border: none !important;
    background-color: #fe424d !important;
 }
-.add-btn:hover{
+
+.add-btn:hover {
    border: none !important;
    background-color: #fa0213 !important;
 }
 
 /* show pg */
-.show-img{
+.show-img {
    height: 20rem !important;
 }
-.btns{
+
+.btns {
    display: flex;
 }
 
 #map {
-   height: 300px;  /* or 100vh for fullscreen */
+   height: 300px;
+   /* or 100vh for fullscreen */
    /* width: 80%;    optional, but good */
- }
- #img{
-   height:  100px;
+}
+
+#img {
+   height: 100px;
    width: 200px;
- }
+}
 
 
- #filters {
-     display: flex;
-     flex-wrap: wrap;
- }
- .filter{
-     margin-left: 2rem;
-     margin-top: 2rem;
-     opacity: 0.7;
- }
- .filter:hover{
-     opacity: 1;
-     cursor: pointer;
- }
- .icon-bar {
- width: 100%; 
- background-color: #ffffff; /* Dark-grey background */
- overflow: auto; /* Overflow due to float */
- }
+#filters {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.filter {
+   margin-left: 2rem;
+   margin-top: 2rem;
+   opacity: 0.7;
+}
+
+.filter:hover {
+   opacity: 1;
+   cursor: pointer;
+}
+
+.icon-bar {
+   width: 100%;
+   background-color: #ffffff;
+   /* Dark-grey background */
+   overflow: auto;
+   /* Overflow due to float */
+}
 
 .icon-bar a {
- float: left; /* Float links side by side */
- text-align: center; /* Center-align text */
- width: 7%; /* Equal width (5 icons with 20% width each = 100%) */
- padding: 12px 0; /* Some top and bottom padding */
- transition: all 0.3s ease; /* Add transition for hover effects */
- color: rgb(0, 0, 0); /* White text color */
- font-size: 36px; /* Increased font size */
- }
+   float: left;
+   /* Float links side by side */
+   text-align: center;
+   /* Center-align text */
+   width: 7%;
+   /* Equal width (5 icons with 20% width each = 100%) */
+   padding: 12px 0;
+   /* Some top and bottom padding */
+   transition: all 0.3s ease;
+   /* Add transition for hover effects */
+   color: rgb(0, 0, 0);
+   /* White text color */
+   font-size: 36px;
+   /* Increased font size */
+}
 
 .icon-bar a:hover {
- background-color: #50aaff; /* Add a hover color */
- }
+   background-color: #50aaff;
+   /* Add a hover color */
+}
 
 .active {
- background-color: #04AA6D; /* Add an active/current color */
- }
+   background-color: #04AA6D;
+   /* Add an active/current color */
+}
 
- div.scrollmenu {
+div.scrollmenu {
    background-color: #ffffff;
    overflow: auto;
    white-space: nowrap;
- }
- 
- div.scrollmenu a {
+}
+
+div.scrollmenu a {
    display: inline-block;
    color: rgb(20, 18, 18);
    text-align: center;
    padding: 14px;
    text-decoration: none;
- }
- 
- div.scrollmenu a:hover {
+}
+
+div.scrollmenu a:hover {
    background-color: #cac1c1;
- }
+}

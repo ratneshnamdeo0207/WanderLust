@@ -1,109 +1,82 @@
 <% layout('/layouts/boilerplate') -%>
 <body>
-    
+  <div class="container mt-4 mb-5">
     <div class="row">
-        <div class="col-8 offset-2">
-    <h2>Create New Listing</h2>
-    <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+      <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12">
         
-        <div class="mb-3">
+        <h2 class="mb-4">Create New Listing</h2>
+        
+        <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+          
+          <!-- Title -->
+          <div class="mb-3">
             <label for="listing[title]" class="form-label">Title</label>
             <input type="text" name="listing[title]" placeholder="Enter a catchy title" class="form-control" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-            <div class="invalid-feedback">
-              Please enter a title.
-            </div>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please enter a title.</div>
           </div>
 
-       
-       
-        <div class="mb-3">
-            <label for="lsiting[description]" class="form-label">Description</label>
-            <textarea name="listing[description]" class="form-control"
-            required></textarea>
-            <div class="valid-feedback">
-              You Describe it well!!
-            </div>
-            <div class="invalid-feedback">
-              Please describe the place
-            </div>
+          <!-- Description -->
+          <div class="mb-3">
+            <label for="listing[description]" class="form-label">Description</label>
+            <textarea name="listing[description]" class="form-control" rows="3" required></textarea>
+            <div class="valid-feedback">You Describe it well!!</div>
+            <div class="invalid-feedback">Please describe the place</div>
           </div>
 
-          <!-- enum: ['trending','room', 'iconic cities', 'castles', 'pools', 'camping', 'snow sides', 'mountain', 'farms' ] -->
+          <!-- Category -->
+          <div class="mb-3">
+            <label for="listing[category]" class="form-label">Category</label>
+            <select class="form-select" name="listing[category]" required>
+              <option value="no category" selected>No Category</option>
+              <option value="trending">Trending</option>
+              <option value="room">Room</option>
+              <option value="iconic cities">Iconic Cities</option>
+              <option value="castles">Castles</option>
+              <option value="pools">Pools</option>
+              <option value="camping">Camping</option>
+              <option value="snow sides">Snow Sides</option>
+              <option value="mountain">Mountain</option>
+              <option value="farms">Farms</option>
+            </select>
+          </div>
 
-          <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example"name="listing[category]" required>
-            <option  value="no category" selected >No Category</option>
-            <option value="trending">Trending</option>
-            <option value="room">Room</option>
-            <option value="iconic cities">Iconic Cities</option>
-            <option value="castles">Castles</option>
-            <option value="pools">Pools</option>
-            <option value="camping">Camping</option>
-            <option value="snow sides">Snow Sides</option>
-            <option value="mountain">mountain</option>
+          <!-- Image -->
+          <div class="mb-3">
+            <label for="listing[image]" class="form-label">Upload Image</label>
+            <input type="file" name="listing[image]" class="form-control" required>
+          </div>
 
-            <option value="farms">Two</option>
-
-           
-          </select>
-   
-        
-         
-        <div class="mb-3">
-            <label for="listing[image]" class="form-label">Upload ur image</label>
-            <input type="file" name="listing[image]"  class="form-control" required>
-        </div>
-
-        
-        
-        <div class="row">
+          <!-- Price & Country -->
+          <div class="row">
             <div class="mb-3 col-md-4">
-                <label for="listing[price]" class="form-label">Price</label>
-                <input type="number" name="listing[price]" class="form-control" placeholder="1200"
-                required>
-                <div class="valid-feedback">
-                  Affordable
-                </div>
-                <div class="invalid-feedback">
-                  Is it free?
-                </div>
-              </div>
-    
-           
-            
-            <div class="mb-3 col-md-8 ">
-                <label for="listing[country]" class="form-label">Country</label>
-                <input type="text" name="listing[country]" placeholder="India" class="form-control"
-                required>
-                <div class="valid-feedback">
-                  Beautiful Country
-                </div>
-                <div class="invalid-feedback">
-                  Is it in moon?
-                </div>
-              </div>
-        </div>
-
-       
-        
-        <div class="mb-3">
-            <label for="listing[location]" class="form-label">Location</label>
-            <input type="text" name="listing[location]" placeholder="Jabalpur, Bhopal, Indore" class="form-control"
-            required>
-            <div class="valid-feedback">
-              Thats a Beautiful place to live
+              <label for="listing[price]" class="form-label">Price</label>
+              <input type="number" name="listing[price]" class="form-control" placeholder="1200" required>
+              <div class="valid-feedback">Affordable</div>
+              <div class="invalid-feedback">Is it free?</div>
             </div>
-            <div class="invalid-feedback">
-              How can we locate if you not give us the location?
+
+            <div class="mb-3 col-md-8">
+              <label for="listing[country]" class="form-label">Country</label>
+              <input type="text" name="listing[country]" placeholder="India" class="form-control" required>
+              <div class="valid-feedback">Beautiful Country</div>
+              <div class="invalid-feedback">Is it in moon?</div>
             </div>
           </div>
 
+          <!-- Location -->
+          <div class="mb-3">
+            <label for="listing[location]" class="form-label">Location</label>
+            <input type="text" name="listing[location]" placeholder="Jabalpur, Bhopal, Indore" class="form-control" required>
+            <div class="valid-feedback">That's a Beautiful place to live</div>
+            <div class="invalid-feedback">How can we locate if you not give us the location?</div>
+          </div>
 
-        <button class="btn btn-dark add-btn">Submit</button>
-    </form>
-</div>
-</div>
-<!-- <script src="/js/script.js"></script> -->
+          <!-- Submit Button -->
+          <button class="btn btn-dark ">Submit</button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
 </body>
