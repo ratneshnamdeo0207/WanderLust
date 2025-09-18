@@ -5,6 +5,13 @@ Built with **Node.js, Express, MongoDB, Passport, and EJS**, this app allows use
 
 ---
 
+## 🌍 Live Demo
+
+Check out the deployed version of the project here:  
+👉 [Live Demo on Render](https://your-render-link-here)  
+
+---
+
 ## Table of Contents
 
 - [Features](#features)  
