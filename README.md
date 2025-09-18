@@ -23,13 +23,16 @@ Built with **Node.js, Express, MongoDB, Passport, and EJS**, this app allows use
 
 - User authentication with **Passport (Local Strategy)**  
 - Secure session handling using **connect-mongo** and **MongoDB Atlas**  
-- Flash messages for success/error notifications  
+- Flash messages for success/error notifications
+- Review & rating system with validation 
 - Users can:  
   - Browse listings  
   - Create new listings  
   - Edit or delete their own listings  
   - Add reviews to listings  
-- Friendly UI with **EJS templates** and **Bootstrap**  
+- **Interactive Map Integration**  
+  - Each listing displays its location on an interactive map  
+  - Powered by Mapbox (or a compatible map API)  Friendly UI with **EJS templates** and **Bootstrap**  
 - Error handling for invalid routes or database issues  
 
 ---
@@ -121,32 +124,70 @@ You **must** set the following environment variables in your `.env` file:
 ## Project Structure
 
 ```
-/ ─ app.js
-  /routes
-    listings.js
-    reviews.js
-    user.js
-  /models
-    listing.js
-    review.js
-    user.js
-  /views
-    /listings
-      index.ejs
-      show.ejs
-      new.ejs
-      edit.ejs
-      error.ejs
-      welcome.ejs
-    /users
-      signup.ejs
-      login.ejs
-  /public
-    └─ static assets (CSS/JS/images)
-  /utils
-    asyncWrap.js
-    validateListing.js
-  /middleware.js
+project-root/
+├── controller/ # Route controllers (business logic)
+│ ├── listings.js
+│ ├── review.js
+│ └── user.js
+│
+├── init/ # Initial data & scripts
+│ ├── data.js
+│ └── index.js
+│
+├── models/ # Mongoose schemas
+│ ├── listing.js
+│ ├── review.js
+│ └── user.js
+│
+├── node_modules/ # Installed dependencies (ignored in Git)
+│
+├── public/ # Static files
+│ ├── css/
+│ │ ├── rating.css
+│ │ └── style.css
+│ └── js/
+│ └── script.js
+│
+├── routes/ # Express route definitions
+│ ├── listings.js
+│ ├── reviews.js
+│ └── user.js
+│
+├── utils/ # Utility/helper functions
+│ ├── asyncWrap.js
+│ ├── CustomError.js
+│ ├── validateListing.js
+│ └── validateReview.js
+│
+├── views/ # EJS templates (server-side rendering)
+│ ├── includes/ # Shared UI components
+│ │ ├── flash.ejs
+│ │ ├── footer.ejs
+│ │ └── navbar.ejs
+│ │
+│ ├── layouts/ # Layout templates
+│ │ └── boilerplate.ejs
+│ │
+│ ├── listings/ # Listings-related pages
+│ │ ├── edit.ejs
+│ │ ├── error.ejs
+│ │ ├── index.ejs
+│ │ ├── new.ejs
+│ │ ├── show.ejs
+│ │ └── welcome.ejs
+│ │
+│ └── users/ # User authentication pages
+│ ├── login.ejs
+│ └── signup.ejs
+│
+├── .env # Environment variables (not pushed to GitHub)
+├── .gitignore # Git ignore rules
+├── app.js # Main server entry point
+├── cloudConfig.js # Cloudinary / cloud storage config
+├── middleware.js # Custom middleware functions
+├── package.json # Dependencies & project metadata
+├── package-lock.json # Dependency lock file
+└── scheme.js # Database schema setup / seeding script
 ```
 
 ---
