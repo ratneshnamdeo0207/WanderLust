@@ -15,7 +15,8 @@ Check out the deployed version of the project here:
 ## Table of Contents
 
 - [Features](#features)  
-- [Technologies Used](#technologies-used)  
+- [Technologies Used](#technologies-used)
+- [Screenshots](#-screenshots)    
 - [Setup & Installation](#setup--installation)  
 - [Environment Variables](#environment-variables)  
 - [Usage](#usage)  
@@ -51,6 +52,22 @@ Check out the deployed version of the project here:
 - **Authentication**: Passport.js, express-session, connect-mongo  
 - **Templating**: EJS with ejs-mate  
 - **Other**: dotenv, flash messages, method-override  
+
+---
+
+## 📸 Screenshots
+
+### Homepage
+![Homepage](./screenshots/homepage.png)
+
+### All Listings
+![All Listings](./screenshots/AllListing.png)
+
+### Single Listing
+![Listing](./screenshots/listing.png)
+
+### Map Integration
+![Map](./screenshots/UsingMapAPI.png)
 
 ---
 
