@@ -8,7 +8,7 @@ Built with **Node.js, Express, MongoDB, Passport, and EJS**, this app allows use
 ## 🌍 Live Demo
 
 Check out the deployed version of the project here:  
-👉 [Live Demo on Render]([https://your-render-link-here](https://wanderlust-k17h.onrender.com/))  
+👉 [Live Demo on Render] https://wanderlust-k17h.onrender.com/
 
 ---
 
