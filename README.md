@@ -228,7 +228,3 @@ This project is licensed under the **MIT License**.
 
 * Inspired by **Airbnb**
 * Thanks to Express, Mongoose, Passport, and all open-source libraries used
-
-```
-
-
