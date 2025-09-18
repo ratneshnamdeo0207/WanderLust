@@ -58,16 +58,16 @@ Check out the deployed version of the project here:
 ## 📸 Screenshots
 
 ### Homepage
-![Homepage](./screenshots/homepage.png)
+![Homepage](./Screenshots/homepage.png)
 
 ### All Listings
-![All Listings](./screenshots/AllListing.png)
+![All Listings](./Screenshots/AllListing.png)
 
 ### Single Listing
-![Listing](./screenshots/listing.png)
+![Listing](./Screenshots/listing.png)
 
 ### Map Integration
-![Map](./screenshots/UsingMapAPI.png)
+![Map](./Screenshots/UsingMapAPI.png)
 
 ---
 
